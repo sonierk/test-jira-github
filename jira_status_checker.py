@@ -28,7 +28,7 @@
 #   elif singleIssue.status in ["In Progress"]:
 #     return true
 
-# jira_status_checker()
+# jira_status_checker().
 from operator import truediv
 from jira import JIRA
 import os
