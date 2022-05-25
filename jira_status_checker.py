@@ -14,7 +14,7 @@ jira = JIRA(options = jira_base_url,
 			basic_auth = (username,
 						pwd))
 
-singleIssue = jira.issue(jira_id)
+singleIssue = jira.issue('RKSA-1')
 print('{}: {}:{}'.format(singleIssue.key,
 						singleIssue.fields.summary,
                         singleIssue.fields.status,
