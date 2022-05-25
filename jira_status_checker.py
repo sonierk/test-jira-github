@@ -38,8 +38,8 @@ import sys
 
 jira_id = sys.argv[1]
 jira_base_url = os.environ.get("JIRA_CLOUD_URL")
-username = os.environ.get("JIRA_USER_LOCAL")
-apikey = os.environ.get("JIRA_TOKEN_LOCAL")
+username = os.environ.get("JIRA_USER")
+apikey = os.environ.get("JIRA_TOKEN")
 
 jira = JIRA(options = {'server':jira_base_url, 'verify':False}, basic_auth = (username, apikey))
 
