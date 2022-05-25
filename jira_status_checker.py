@@ -1,4 +1,4 @@
-# from operator import truediv
+## from operator import truediv
 # from jira import JIRA
 # import os
 # import warnings
@@ -22,7 +22,7 @@
 # print(singleIssue)
 # jira_status = str(singleIssue.fields.status)
 
-# def jira_status_checker():
+## def jira_status_checker():
 #   if singleIssue.status in ["To Do", "Done"]:
 #     return false
 #   elif singleIssue.status in ["In Progress"]:
@@ -38,8 +38,8 @@ import sys
 
 jira_id = sys.argv[1]
 jira_base_url = os.environ.get("JIRA_CLOUD_URL")
-username = os.environ.get("JIRA_USER")
-apikey = os.environ.get("JIRA_TOKEN")
+username = os.environ.get("JIRA_USER_LOCAL")
+apikey = os.environ.get("JIRA_TOKEN_LOCAL")
 
 jira = JIRA(options = {'server':jira_base_url, 'verify':False}, basic_auth = (username, apikey))
 
