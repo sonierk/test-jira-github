@@ -15,11 +15,11 @@
 # 						pwd))
 
 # singleIssue = jira.issue(jira_id)
-# # print('{}: {}:{}'.format(singleIssue.key,
-# # 						singleIssue.fields.summary,
-# #                         singleIssue.fields.status,
-# # 						singleIssue.fields.reporter.displayName))
-# # print(singleIssue)
+# print('{}: {}:{}'.format(singleIssue.key,
+# 						singleIssue.fields.summary,
+#                         singleIssue.fields.status,
+# 						singleIssue.fields.reporter.displayName))
+# print(singleIssue)
 # jira_status = str(singleIssue.fields.status)
 
 # def jira_status_checker():
