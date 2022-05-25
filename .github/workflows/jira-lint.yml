@@ -11,14 +11,14 @@ jobs:
     - name: Check Commit Type
       uses: gsactions/commit-message-checker@v1
       with:
-        pattern: 'UTX-[0-9]+'
+        pattern: 'RKSA-[0-9]+'
         flags: 'gm'
-        error: 'Your first line has to contain a commit type like "UTX-1".'
+        error: 'Your first line has to contain a commit type like "RKSA-1".'
     
     - name: Login
       uses: atlassian/gajira-login@master
       env:
-        JIRA_BASE_URL: "https://uneritx.atlassian.net"
+        JIRA_BASE_URL: "https://nanao.atlassian.net"
         JIRA_USER_EMAIL: ${{ secrets.JIRA_USER }}
         JIRA_API_TOKEN: ${{ secrets.JIRA_TOKEN }}
 
@@ -47,6 +47,6 @@ jobs:
           pip install jira
           python jira_status_checker.py ${{steps.jira_issue.outputs.Issue}}
       env:
-        JIRA_BASE_URL: "https://uneritx.atlassian.net"
+        JIRA_BASE_URL: "https://nanao.atlassian.net"
         JIRA_USER_LOCAL: ${{ secrets.JIRA_USER }}
         JIRA_TOKEN_LOCAL: ${{ secrets.JIRA_TOKEN }}
