@@ -1,7 +1,7 @@
 name: Commit Checker
 
 # Run on push to any branch
-## on: [push]
+# on: [push]
 on:
   push:
     branches:
