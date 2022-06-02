@@ -1,6 +1,6 @@
 name: Commit Checker
 
-## Run on push to any branch
+# Run on push to any branch
 on: [push]
 
 jobs:
