@@ -4,8 +4,6 @@ on: [pull_request]
 jobs:
       JIRA-Status-Update:
         runs-on: ubuntu-latest
-    
-    
         steps: 
         - name: Login
           uses: atlassian/gajira-login@master
