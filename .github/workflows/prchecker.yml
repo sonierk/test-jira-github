@@ -1,0 +1,13 @@
+name: Post Comment in Jira for PR
+on: [pull_request]
+  
+jobs:
+  Commit_Checker:
+    runs-on: ubuntu-latest
+    
+    steps:       
+    - name: Comment on issue
+      uses: atlassian/gajira-comment@master
+      with:
+        issue: RKSA-2
+        comment: "${{ github.event.pusher.name }} pushed to repository: ${{ github.event.repository.full_name }}"

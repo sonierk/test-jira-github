@@ -1,15 +1,7 @@
 name: Commit Checker
 
 # Run on push to any branch
-## on: [push]
-on:
-  push:
-    branches:
-      - main
-      - release
-  pull_request:
-    branches:
-      - main
+on: [push]
 
 jobs:
   Commit_Checker:
@@ -73,8 +65,8 @@ jobs:
         script: |
           core.setFailed('JIRA Issue is not in In-Progress Status. Either the status is To-Do or Done.Please check')
 
-    - name: Comment on issue
-      uses: atlassian/gajira-comment@master
-      with:
-        issue: RKSA-1
-        comment: "${{ github.event.pusher.name }} pushed to repository: ${{ github.event.repository.full_name }}"
+#     - name: Comment on jira issue
+#       uses: atlassian/gajira-comment@master
+#       with:
+#         issue: RKSA-1
+#         comment: "${{ github.event.pusher.name }} pushed to repository: ${{ github.event.repository.full_name }}"
