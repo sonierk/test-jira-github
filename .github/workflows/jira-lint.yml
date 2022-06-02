@@ -76,5 +76,5 @@ jobs:
     - name: Comment on jira issue
       uses: atlassian/gajira-comment@master
       with:
-        issue: RKSA-2
+        issue: "${{github.event.head_commit.message}}"
         comment: "${{ github.event.pusher.name }} pushed to repository: ${{ github.event.repository.full_name }}"
