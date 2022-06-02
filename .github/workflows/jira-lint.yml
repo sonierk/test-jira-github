@@ -64,4 +64,20 @@ jobs:
       with:
         script: |
           core.setFailed('JIRA Issue is not in In-Progress Status. Either the status is To-Do or Done.Please check')
-    
+  build:
+    needs: Commit_Checker
+    runs-on: ubuntu-latest
+    name: Jira Example
+    steps:
+      - name: Login
+        uses: atlassian/gajira-login@master
+        env:
+          JIRA_BASE_URL: ${{ secrets.JIRA_BASE_URL }}
+          JIRA_USER_EMAIL: ${{ secrets.JIRA_USER_EMAIL }}
+          JIRA_API_TOKEN: ${{ secrets.JIRA_API_TOKE
+
+      - name: Comment on issue
+        uses: atlassian/gajira-comment@master
+        with:
+          issue: RKSA-1
+          comment: "${{ github.event.pusher.name }} pushed to repository: ${{ github.event.repository.full_name }}"
