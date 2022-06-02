@@ -65,9 +65,8 @@ jobs:
         script: |
           core.setFailed('JIRA Issue is not in In-Progress Status. Either the status is To-Do or Done.Please check')
   build:
-    needs: Commit_Checker
+    needs: [Commit_Checker]
     runs-on: ubuntu-latest
-    name: Jira Example
     steps:
       - name: Login
         uses: atlassian/gajira-login@master
