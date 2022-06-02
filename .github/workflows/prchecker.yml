@@ -5,6 +5,7 @@ jobs:
       JIRA-Status-Update:
         runs-on: ubuntu-latest
         steps: 
+
         - name: Login
           uses: atlassian/gajira-login@master
           env:
@@ -16,8 +17,10 @@ jobs:
           id: date
           run: echo "::set-output name=date::$(date +'%Y-%m-%dT%H:%M:%S')"
       
+
         - name: Comment on issue
           uses: atlassian/gajira-comment@master
           with:
             issue: RKSA-2
             comment: ${{ github.event.pusher.name }} Pull Request Opened for - ${{ github.event.repository.full_name }} ${{ github.head_ref }} branch at ${{ steps.date.outputs.date }}  
+
