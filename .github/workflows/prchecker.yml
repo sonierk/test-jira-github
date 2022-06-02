@@ -1,5 +1,5 @@
 name: Post Comment in Jira for PR
-on: pull_request
+on: [pull_request]
   
 jobs:
   Commit_Checker:
@@ -20,4 +20,4 @@ jobs:
           uses: atlassian/gajira-comment@master
           with:
             issue: RKSA-2
-            comment: ${{ github.event.pusher.name }} pushed to repository: ${{ github.event.repository.full_name }}
+            comment: "${{ github.event.pusher.name }} pushed to repository: ${{ github.event.repository.full_name }}"
