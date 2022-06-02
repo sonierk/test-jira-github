@@ -73,8 +73,8 @@ jobs:
         script: |
           core.setFailed('JIRA Issue is not in In-Progress Status. Either the status is To-Do or Done.Please check')
 
-    - name: Comment on issue
+    - name: Comment on jira issue
       uses: atlassian/gajira-comment@master
       with:
-        issue: RKSA-1
+        issue: RKSA-2
         comment: "${{ github.event.pusher.name }} pushed to repository: ${{ github.event.repository.full_name }}"
