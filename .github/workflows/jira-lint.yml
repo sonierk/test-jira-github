@@ -2,14 +2,6 @@ name: Commit Checker
 
 # Run on push to any branch
 on: [push]
-# on:
-#   push:
-#     branches:
-#       - main
-#       - release
-#   pull_request:
-#     branches:
-#       - main
 
 jobs:
   Commit_Checker:
