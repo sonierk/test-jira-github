@@ -1,5 +1,5 @@
 name: Post Comment in Jira for PR
-on: [pull_request]
+on: pull_request
   
 jobs:
   Commit_Checker:
