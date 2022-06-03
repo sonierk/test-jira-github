@@ -11,36 +11,7 @@ jobs:
           env:
             JIRA_BASE_URL: "https://nanao.atlassian.net"
             JIRA_USER_EMAIL: ${{ secrets.JIRA_USER }}
-            JIRA_API_TOKEN: ${{ secrets.JIRA_TOKEN }}
-            
-        - name: Parse Jira Keys from Commit
-          id: jira_keys
-          if: always()
-          uses: HighwayThree/jira-extract-issue-keys@master
-          with:
-            is-pull-request: ${{ github.event_name == 'pull_request' }}
-            #parse-all-commits: ${{ github.event_name == 'push' }}
-          env:
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        - name: Push Build Info to Jira
-          if: steps.jira_keys.outputs.jira-keys != ''
-          id: push_build_info_to_jira
-          uses: HighwayThree/jira-upload-build-info@master
-          with:
-            cloud-id: "https://nanao.atlassian.net"
-            client-id: '${{ secrets.JIRA_USER }}'
-            client-secret: '${{ secrets.JIRA_TOKEN }}'
-            pipeline-id: '${{ github.repository }} ${{ github.workflow }}'
-            build-number: ${{ github.run_number }}
-            build-display-name: 'Workflow: ${{ github.workflow }} (#${{ github.run_number }})'
-            build-state: "${{ env.BUILD_STATE }}"
-            build-url: '${{github.event.repository.url}}/actions/runs/${{github.run_id}}'
-            update-sequence-number: '${{ github.run_id }}'
-            last-updated: '${{github.event.head_commit.timestamp}}'
-            issue-keys: "${{ steps.jira_keys.outputs.jira-keys }}"
-            commit-id: '${{ github.sha }}'
-            repo-url: '${{ github.event.repository.url }}'
-            build-ref-url: '${{ github.event.repository.url }}/actions/runs/${{ github.run_id }}'        
+            JIRA_API_TOKEN: ${{ secrets.JIRA_TOKEN }}       
         
         - name: Get current date
           id: date
