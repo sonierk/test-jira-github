@@ -27,9 +27,9 @@ jobs:
           id: push_build_info_to_jira
           uses: HighwayThree/jira-upload-build-info@master
           with:
-            cloud-id: '${{ secrets.CLOUD_ID }}'
-            client-id: '${{ secrets.CLIENT_ID }}'
-            client-secret: '${{ secrets.CLIENT_SECRET }}'
+            cloud-id: "https://nanao.atlassian.net"
+            client-id: '${{ secrets.JIRA_USER }}'
+            client-secret: '${{ secrets.JIRA_TOKEN }}'
             pipeline-id: '${{ github.repository }} ${{ github.workflow }}'
             build-number: ${{ github.run_number }}
             build-display-name: 'Workflow: ${{ github.workflow }} (#${{ github.run_number }})'
